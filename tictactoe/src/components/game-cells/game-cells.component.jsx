@@ -36,7 +36,7 @@ const GameCell = function (props){
             changedValue = "O";
         }
 
-        props.action(changedValue, props.id);
+        props.action(changedValue, props.id, props.nextVal);
     }
 return (<button id={props.id} className="game-cell-bg" onClick={handleChange}>
                {props.value}
