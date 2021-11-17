@@ -3,7 +3,7 @@ console.log("Hello");
 const placeholder = document.getElementById('placeholder');
 
 
-const Home = React.createElement('a',{href:"/",style:{color:"red",textDecoration:"none",fontWeight:"bold",fontSize:"2rem"},className:"link-ref"},"Home");
+const Home = React.createElement('a',{href:"https://reactjs.org",target:"_blank",style:{color:"red",textDecoration:"none",fontWeight:"bold",fontSize:"2rem"},className:"link-ref"},"Home");
 const about = React.createElement('a',{href:'/about',style:{color:"green",fontWeight:"bold",textDecoration:"none",paddingRight:'5px',fontSize:"2rem"}},"About");
 // const br = React.createElement('br',null,null);
 const h1Tag = React.createElement("h1",null,"Welcome to React");

@@ -1,0 +1,10 @@
+.game-bg{
+    width: 500px;
+    background-color:bisque;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border:2px solid orange;
+    justify-content: space-between;
+    align-items: center;
+}
