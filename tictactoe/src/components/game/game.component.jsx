@@ -10,7 +10,8 @@ class Game extends React.Component{
         super(props);
         this.state = {
             next:"O",
-            cells: [null,null,null,null,null,null,null,null,null]
+            cells: [null,null,null,null,null,null,null,null,null],
+            message:"Next Move is: 'O'"
         }
     }
     handleClick = (id)=>{
@@ -21,13 +22,13 @@ class Game extends React.Component{
         prevArr[id] = changedValue;
         
         var nextVal = (changedValue === "O") ? "X" : "O";
-        this.setState({cells:prevArr, next:nextVal},()=>{console.log(this.state)});
+        this.setState({cells:prevArr, next:nextVal,message:`Next Move is: '${nextVal}'`},()=>{console.log(this.state)});
     }
 
     render(){
         return (
             <div className="game-bg">
-                <GameStatus nextVal={this.state.next} />
+                <GameStatus message={this.state.message} />
                 <Board cellValues = {this.state.cells} nextVal={this.state.next} actionFn={this.handleClick}/>
                 <CustomButton title="RESET"/>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../board/board.styles.css';
 import GameCell from '../game-cells/game-cells.component';
 
-class Board extends React.Component{
+// class Board extends React.Component{
 
     // constructor(props){
     //     super(props);
@@ -22,25 +22,25 @@ class Board extends React.Component{
     //     this.setState({cells:prevArr, next:nextVal},()=>{console.log(this.state)});
     // }
 
-    render(){
+    const Board = ({cellValues, actionFn})=>{
         
         return (
             <div className="game-board-bg">
                 
-                <GameCell id="0" value={this.props.cellValues[0]} action={this.props.actionFn} >1</GameCell>
-                <GameCell id="1" value={this.props.cellValues[1]} action={this.props.actionFn} >2</GameCell>
-                <GameCell id="2" value={this.props.cellValues[2]} action={this.props.actionFn} >3</GameCell>
-                <GameCell id="3" value={this.props.cellValues[3]} action={this.props.actionFn} >4</GameCell>
-                <GameCell id="4" value={this.props.cellValues[4]} action={this.props.actionFn} >5</GameCell>
-                <GameCell id="5" value={this.props.cellValues[5]} action={this.props.actionFn} >6</GameCell>
-                <GameCell id="6" value={this.props.cellValues[6]} action={this.props.actionFn} >7</GameCell>
-                <GameCell id="7" value={this.props.cellValues[7]} action={this.props.actionFn} >8</GameCell>
-                <GameCell id="8" value={this.props.cellValues[8]} action={this.props.actionFn} >9</GameCell>   
+                <GameCell id="0" value={cellValues[0]} action={actionFn} >1</GameCell>
+                <GameCell id="1" value={cellValues[1]} action={actionFn} >2</GameCell>
+                <GameCell id="2" value={cellValues[2]} action={actionFn} >3</GameCell>
+                <GameCell id="3" value={cellValues[3]} action={actionFn} >4</GameCell>
+                <GameCell id="4" value={cellValues[4]} action={actionFn} >5</GameCell>
+                <GameCell id="5" value={cellValues[5]} action={actionFn} >6</GameCell>
+                <GameCell id="6" value={cellValues[6]} action={actionFn} >7</GameCell>
+                <GameCell id="7" value={cellValues[7]} action={actionFn} >8</GameCell>
+                <GameCell id="8" value={cellValues[8]} action={actionFn} >9</GameCell>   
                 
             </div>
         
         );
     }
-}
+// }
 
 export default Board;

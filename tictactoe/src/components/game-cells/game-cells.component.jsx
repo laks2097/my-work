@@ -22,7 +22,7 @@ import '../game-cells/game-cells.styles.css';
     
 // };
 
-const GameCell = function (props){
+const GameCell = function ({id,value,action,...othervalues}){
 
     const handleChange = function(){
         // var changedValue = props.value;
@@ -36,16 +36,16 @@ const GameCell = function (props){
         //     changedValue = "O";
         // }
 
-        props.action(props.id);
+        action(id);
     }
     let style;
-    if(props.value === null){
+    if(value === null){
         style = {
             color:"transparent"
         };
     }
     else{
-        if(props.value === "X")
+        if(value === "X")
         {   style = {
                 color:"red"
             };
@@ -57,8 +57,8 @@ const GameCell = function (props){
         }
 
     }
-    let Cellvalue = props.value || "_";
-return (<button style={style} id={props.id} className="game-cell-bg" onClick={handleChange}>
+    let Cellvalue = value || "_";
+return (<button style={style} id={id} className="game-cell-bg" onClick={handleChange}>
                {Cellvalue}
 </button>);
 };
