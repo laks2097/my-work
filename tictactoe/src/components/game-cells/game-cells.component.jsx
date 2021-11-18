@@ -25,18 +25,18 @@ import '../game-cells/game-cells.styles.css';
 const GameCell = function (props){
 
     const handleChange = function(){
-        var changedValue = props.value;
-        if(props.value === "_"){
-            changedValue = "O";
-        }
-        else if(props.value === "O"){
-            changedValue = "X";
-        }
-        else{
-            changedValue = "O";
-        }
+        // var changedValue = props.value;
+        // if(props.value === "_"){
+        //     changedValue = "O";
+        // }
+        // else if(props.value === "O"){
+        //     changedValue = "X";
+        // }
+        // else{
+        //     changedValue = "O";
+        // }
 
-        props.action(changedValue, props.id, props.nextVal);
+        props.action(props.id);
     }
     let style;
     if(props.value === null){

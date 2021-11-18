@@ -13,8 +13,8 @@ class Game extends React.Component{
             cells: [null,null,null,null,null,null,null,null,null]
         }
     }
-    handleClick = (value,id)=>{
-        console.log("Button is clicked;");
+    handleClick = (id)=>{
+        console.log(`Button ${id} is clicked;`);
         var prevArr = this.state.cells; 
         if(prevArr[id]!==null) return;
         var changedValue = this.state.next;
