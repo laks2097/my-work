@@ -6,7 +6,7 @@ import '../game-status/game-status.styles.css';
     const GameStatus = ({message,moves})=>{
         return (
             <div className="game-status-bg">
-                <p>Moves:{moves}, {message}</p>
+                <p>Moves: {moves}, {message}</p>
             </div>
         );
     } 

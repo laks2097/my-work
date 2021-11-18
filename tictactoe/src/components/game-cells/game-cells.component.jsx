@@ -58,7 +58,7 @@ const GameCell = function ({id,value,action,...othervalues}){
 
     }
     let Cellvalue = value || "_";
-return (<button style={style} id={id} className="game-cell-bg" onClick={handleChange}>
+return (<button style={style} id={id} className="game-cell-bg" onClick={handleChange} >
                {Cellvalue}
 </button>);
 };

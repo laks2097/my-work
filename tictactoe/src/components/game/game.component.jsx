@@ -3,18 +3,10 @@ import Board from '../board/board.component';
 import GameStatus from '../game-status/game-status.component';
 import CustomButton from '../custom-button/custom-button.component';
 import './game.styles.css';
+import { isWinner } from '../../services/game-logic';
 
 class Game extends React.Component{
     
-    initialState = () => {
-        return {
-            next:"O",
-            cells: [null,null,null,null,null,null,null,null,null],
-            message:"Next Move is: 'O'",
-            moves:0
-        };
-        
-    };
     constructor(props){
         super(props);
         
@@ -25,28 +17,50 @@ class Game extends React.Component{
             moves:0
         };
     }
+    initialState = () => {
+        return {
+            next:"O",
+            cells: [null,null,null,null,null,null,null,null,null],
+            message:"Next Move is: 'O'",
+            moves:0
+        };
+        
+    };
     handleClick = (id)=>{
         // console.log(`Button ${id} is clicked;`);
-        var prevArr = this.state.cells; 
-        if(prevArr[id]!==null) return;
-        var changedValue = this.state.next;
-        prevArr[id] = changedValue;
+        var cells = this.state.cells; 
         
-        var nextVal = (changedValue === "O") ? "X" : "O";
-        this.setState(({moves})=>({
+        if(cells[id]!==null) return;
+        var changedValue = this.state.next;
+        cells[id] = changedValue;
+        
+        var result = isWinner(cells);
+        let message = "";
+        let next = (changedValue === "O") ? "X" : "O";
+        let moves = this.state.moves+1;
+        if(result.winner){
+            message=`${result.winner} Wins`;
+        } else if(result.gameOver){
+            message=`Game ends Stalemate`;
+        } else{
+            message= `Moves: ${moves}, Next: '${next}'`;
+        }
+
+        
+        this.setState({
             
-                cells:prevArr, 
-                next:nextVal,
-                message:`Next Move is: '${nextVal}'`,
-                moves:(moves+1)
-            })
+                cells, 
+                next,
+                message,
+                moves
+            }
         );
     }
     handleReset = ()=>{
         // console.log("Reset Button clicked!");
         this.setState(
             this.initialState()
-        ,()=>{console.log(this.state);});
+        );
     }
     render(){
         return (
