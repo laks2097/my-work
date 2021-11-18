@@ -38,8 +38,28 @@ const GameCell = function (props){
 
         props.action(changedValue, props.id, props.nextVal);
     }
-return (<button id={props.id} className="game-cell-bg" onClick={handleChange}>
-               {props.value}
+    let style;
+    if(props.value === null){
+        style = {
+            color:"transparent"
+        };
+    }
+    else{
+        if(props.value === "X")
+        {   style = {
+                color:"red"
+            };
+        }
+        else{
+            style = {
+                color: "blue"
+            };
+        }
+
+    }
+    let Cellvalue = props.value || "_";
+return (<button style={style} id={props.id} className="game-cell-bg" onClick={handleChange}>
+               {Cellvalue}
 </button>);
 };
 

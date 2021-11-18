@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 .game-cell-bg{
     border:2px solid brown;
     text-align:center;
     cursor:pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Shadows Into Light', cursive;
 }
