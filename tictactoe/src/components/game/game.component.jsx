@@ -15,22 +15,33 @@ class Game extends React.Component{
         }
     }
     handleClick = (id)=>{
-        console.log(`Button ${id} is clicked;`);
+        // console.log(`Button ${id} is clicked;`);
         var prevArr = this.state.cells; 
         if(prevArr[id]!==null) return;
         var changedValue = this.state.next;
         prevArr[id] = changedValue;
         
         var nextVal = (changedValue === "O") ? "X" : "O";
-        this.setState({cells:prevArr, next:nextVal,message:`Next Move is: '${nextVal}'`},()=>{console.log(this.state)});
+        this.setState({cells:prevArr, next:nextVal,message:`Next Move is: '${nextVal}'`});
     }
-
+    handleReset = ()=>{
+        // console.log("Reset Button clicked!");
+        this.setState(
+            {
+                cells:[
+                    null,null,null,
+                    null,null,null,
+                    null,null,null
+                ]
+            }
+        );
+    }
     render(){
         return (
             <div className="game-bg">
                 <GameStatus message={this.state.message} />
                 <Board cellValues = {this.state.cells} nextVal={this.state.next} actionFn={this.handleClick}/>
-                <CustomButton title="RESET"/>
+                <CustomButton title="RESET" onReset={this.handleReset}/>
             </div>
         );
     } 
