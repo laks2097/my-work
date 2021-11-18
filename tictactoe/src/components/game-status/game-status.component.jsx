@@ -6,7 +6,7 @@ class GameStatus extends React.Component{
     render(){
         return (
             <div className="game-status-bg">
-                <p>Next Move: O</p>
+                <p>Next Move: {this.props.nextVal}</p>
             </div>
         );
     } 
