@@ -8,3 +8,13 @@
     justify-content: space-between;
     align-items: center;
 }
+.app-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.timer-clocks .timer-container{
+    margin-bottom: 10px;
+}

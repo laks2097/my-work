@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.timer-container{
+    border:1px solid black;
+    padding:4px;
+    width:175px;
+    display:flex;
+    flex-direction: column;
+    margin-left:10px;
+    background-color: #b2ebf2;
+}
+.timer-text{
+    text-align: center;
+    font-size:2rem;
+    margin: 8px 2px;
+    padding:10px;
+    background-color:white;
+    font-family: 'Audiowide', cursive;
+    
+}
+.timer-button-container{
+    text-align: center;
+}
+
+.timer-button-container button{
+    margin:0px 5px;
+   padding:5px;
+}
+#start-btn{
+    background-color:green;
+    color:white;
+    border-radius: 8px;
+    padding: 5px 20px;
+}
+
+#stop-btn{
+    background-color:crimson;
+    color:white;
+    border-radius: 8px;
+    padding: 5px 20px;
+}
+
+.player-label{
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+}

@@ -1,8 +1,11 @@
 .game-status-bg{
     font-weight: bold;
-    color:white;
-    background-color: slategray;
+    color:black;
+    background-color: rgb(255, 208, 0);
     font-size:1rem;
     padding: 0px 10px;
     margin:2px;
+}
+.winner-text{
+    color:green;
 }

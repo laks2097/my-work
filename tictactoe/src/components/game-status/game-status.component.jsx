@@ -3,10 +3,10 @@ import '../game-status/game-status.styles.css';
 
 // class GameStatus extends React.Component{
     
-    const GameStatus = ({message,moves})=>{
+    const GameStatus = ({message})=>{
         return (
             <div className="game-status-bg">
-                <p>Moves: {moves}, {message}</p>
+                <p className={message.includes("Wins") ? "winner-text" : ""}>{message}</p>
             </div>
         );
     } 

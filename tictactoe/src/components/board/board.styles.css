@@ -1,7 +1,7 @@
 .game-board-bg{
     border:2px solid green;
     width: 90%;
-    padding:2px;
+    padding:12px;
     height: 90%;
     background-color: rgb(217, 247, 255);
     display: grid;
