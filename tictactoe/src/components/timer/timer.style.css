@@ -30,14 +30,16 @@
     background-color:green;
     color:white;
     border-radius: 8px;
-    padding: 5px 20px;
+    padding: 5px 15px;
+    margin-bottom: 4px;
 }
 
 #stop-btn{
     background-color:crimson;
     color:white;
     border-radius: 8px;
-    padding: 5px 20px;
+    padding: 5px 15px;
+    margin-bottom: 4px;
 }
 
 .player-label{

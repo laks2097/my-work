@@ -9,3 +9,6 @@
 .winner-text{
     color:green;
 }
+.game-status-bg p{
+    margin: 5px 0px
+}

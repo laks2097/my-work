@@ -1,0 +1,25 @@
+.moves-card{
+    border: 2px solid black;
+    margin-right:10px;
+}
+.moves-card h5{
+    margin: 4px 0px;
+    padding: 2px;
+    color: steelblue;
+}
+.moves-table{
+    border:1px solid black;
+    border-collapse: collapse;
+    
+    width:100%;
+}
+.moves-table thead tr th{
+    border: 1px solid;
+    padding:5px;
+    color:white;
+    background-color:rgb(2, 128, 54);
+}
+.moves-table tbody tr td{
+    border: 1px solid;
+    padding:5px;
+}

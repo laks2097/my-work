@@ -55,6 +55,8 @@ class Timer extends React.Component {
         if(this.id){
             clearInterval(this.id);
             this.id = null;
+            
+            
         }
     }
 
@@ -75,6 +77,12 @@ class Timer extends React.Component {
                 this.stop();
             }
         }
+        if(prevProps.shouldReset === false && this.props.shouldReset === true){
+            console.log("INSIDE isRESET CHECK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            this.stop();
+            this.setState({ms:0});
+            this.start();
+        }
     }
 
     render(){
@@ -92,8 +100,8 @@ class Timer extends React.Component {
                 <p className="player-label">Player: {this.props.label}</p>
                 <p className="timer-text">{seconds}.{hms}</p>
                 <div className="timer-button-container" style={btnContainerStyle}>
-                    <button id="start-btn" className="timer-button-start" onClick={this.start}>Start</button>
-                    <button id="stop-btn" className="timer-button-stop" onClick={this.stop}>Stop</button>
+                    <button id="start-btn" className="timer-button-start" onClick={this.start}>START</button>
+                    <button id="stop-btn" className="timer-button-stop" onClick={this.stop}>STOP</button>
                 </div>
 
             </div>

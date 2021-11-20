@@ -1,0 +1,25 @@
+.score-card{
+    border: 2px solid black;
+    margin-right:10px;
+}
+.score-card h5{
+    margin: 4px 0px;
+    padding: 2px;
+    color: steelblue;
+}
+.score-table{
+    border:1px solid black;
+    border-collapse: collapse;
+    
+    width:100%;
+}
+.score-table thead tr th{
+    border: 1px solid;
+    padding:5px;
+    color:white;
+    background-color:rgb(2, 128, 54);
+}
+.score-table tbody tr td{
+    border: 1px solid;
+    padding:5px;
+}
