@@ -38,25 +38,10 @@ const GameCell = function ({id,value,action,...othervalues}){
 
         action(id);
     }
-    let style;
-    if(value === null){
-        style = {
-            color:"transparent"
-        };
-    }
-    else{
-        if(value === "X")
-        {   style = {
-                color:"red"
-            };
-        }
-        else{
-            style = {
-                color: "blue"
-            };
-        }
-
-    }
+    let style = {
+        color: (value !== null) ? (value === "X") ? "red" : "blue" : "transparent",
+        cursor:(value!== null) ? "not-allowed" : "pointer"
+    };
     let Cellvalue = value || "_";
 return (<button style={style} id={id} className="game-cell-bg" onClick={handleChange} >
                {Cellvalue}

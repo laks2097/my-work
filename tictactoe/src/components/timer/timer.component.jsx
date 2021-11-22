@@ -78,11 +78,12 @@ class Timer extends React.Component {
             }
         }
         if(prevProps.shouldReset === false && this.props.shouldReset === true){
-            console.log("INSIDE isRESET CHECK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
             this.stop();
             this.setState({ms:0});
             this.start();
         }
+        
     }
 
     render(){

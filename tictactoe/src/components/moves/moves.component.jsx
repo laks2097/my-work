@@ -2,8 +2,8 @@ import React from 'react';
 
 import '../moves/moves.styles.css';
 
-const Moves = ({cells}) => {
-    let i = 0;
+const Moves = ({moveList}) => {
+    
     return (
         <div className="moves-outer">
             <div className="moves-card">
@@ -17,12 +17,12 @@ const Moves = ({cells}) => {
                         </tr>
                     </thead>
                     <tbody>
-                    {cells.map((item,index)=>{
-                        i++;
+                    {moveList.map((item,index)=>{
+                        
                         return (<tr>
-                            <td>{i}</td>
-                            <td>{item}</td>
-                            <td>{index}</td>
+                            <td>{index+1}</td>
+                            <td>{item.player}</td>
+                            <td>{item.position+1}</td>
                         </tr>);
                     })}
                     </tbody>

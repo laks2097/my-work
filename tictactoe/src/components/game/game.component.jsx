@@ -25,6 +25,9 @@ class Game extends React.Component {
             xwins:0,
             isReset:false,
             shouldContinue:true,
+            moveList:[],
+            winningCombo:[],
+            
         };
 
     };
@@ -46,25 +49,34 @@ class Game extends React.Component {
         let owins = this.state.owins;
         let isReset = this.state.isReset;
         let shouldContinue = this.state.shouldContinue;
-
+        let moveList = [...this.state.moveList];
+        let winningCombo = this.state.winningCombo;
+        moveList.push({
+            player:this.state.next,
+            position:id
+        });
         if(shouldContinue === false) return;
         if (result.winner) {
             message = `Moves: ${moves}, ${result.winner} Wins`;
             games++;
             isReset = false;
             shouldContinue = false;
+            
             if(result.winner === "X"){
                 xwins++;
             }
             else if(result.winner === "O"){
                 owins++;
             }
+            winningCombo = result.winningCombo;
         } else if (result.gameOver) {
             message = `Game is a Draw`;
             isReset = false;
+           
             games++;
         } else {
             message = `Moves: ${moves}, Next: '${next}'`;
+           
         }
         
 
@@ -79,8 +91,9 @@ class Game extends React.Component {
             owins,
             isReset,
             shouldContinue,
-        }
-        );
+            moveList,
+            winningCombo,
+        });
 
     }
     handleReset = () => {
@@ -92,7 +105,8 @@ class Game extends React.Component {
                 message: "Moves: 0, Next: 'O'",
                 moves: 0,
                 isReset: true,
-                shouldContinue:true
+                shouldContinue:true,
+                moveList:[],
             }
         );
     }
@@ -104,20 +118,20 @@ class Game extends React.Component {
         return (
             <div className="app-container">
                 <div className="score-move-section">
-                    <Moves cells={this.state.cells}/>
+                    <Moves moveList={this.state.moveList}/>
                     <br/>
                     <ScoreBoard xWins={this.state.xwins} oWins={this.state.owins} totalGames={this.state.games}/>
                 </div>
                 <div className="game-bg">
                     <GameStatus message={this.state.message} moves={this.state.moves} />
-                    <Board cellValues={this.state.cells} nextVal={this.state.next} actionFn={this.handleClick} />
+                    <Board cellValues={this.state.cells} nextVal={this.state.next} actionFn={this.handleClick} winnginCombo={this.state.winningCombo}/>
                     <CustomButton title="RESET" onReset={this.handleReset} moves={this.state.moves} />
                     <br />
 
                 </div>
                 <div className="timer-clocks">
-                    <Timer showManualControls={true} label="O" running={this.state.next === "O"} shouldReset={this.state.isReset} />
-                    <Timer showManualControls={true} label="X" running={this.state.next === "X"} shouldReset={this.state.isReset} />
+                    <Timer showManualControls={true} label="O" running={this.state.next === "O"} shouldReset={this.state.isReset}/>
+                    <Timer showManualControls={true} label="X" running={this.state.next === "X"} shouldReset={this.state.isReset}/>
                 </div>
 
             </div>

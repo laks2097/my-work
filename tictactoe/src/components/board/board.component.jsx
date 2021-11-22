@@ -22,12 +22,20 @@ import GameCell from '../game-cells/game-cells.component';
     //     this.setState({cells:prevArr, next:nextVal},()=>{console.log(this.state)});
     // }
 
-    const Board = ({cellValues, actionFn})=>{
+    const Board = ({cellValues, actionFn,winningCombo})=>{
+        
         
         return (
             <div className="game-board-bg">
                 {
-                    cellValues.map((cell,id)=>(<GameCell key={id} id={id} value={cellValues[id]} action={actionFn} >1</GameCell>))
+                    cellValues.map((cell,id)=>
+                    (<GameCell 
+                        key={id}  
+                        id={id} 
+                        value={cellValues[id]} 
+                        action={actionFn} >
+                            1
+                        </GameCell>))
                 }
                
                 {/* <GameCell id="1" value={cellValues[1]} action={actionFn} >2</GameCell>
